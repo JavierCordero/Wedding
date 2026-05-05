@@ -374,16 +374,19 @@
 							<div class="col-md-4 col-sm-4">
 								<div class="form-group">
 									<label for="telephone" class="sr-only">Teléfono</label>
-									<input type="text" class="form-control" id="telephone" placeholder="Teléfono" required>
+									<input type="number" class="form-control" id="telephone" placeholder="Teléfono" required pattern="^[+0-9\\s-]{6,20}$">
 								</div>
 							</div>
 						</div>
 						<div class="row" style="margin-top: 10px;">
 							<div class="col-md-4 col-sm-4">
 								<div class="form-group">
-									<label for="assistants" class="sr-only">Número de personas</label>
-									<input type="text" class="form-control" id="assistants" placeholder="Número de personas">
+									<label for="assistants" class="sr-only">Número de acompañantes</label>
+									<input type="number" class="form-control" id="assistants" placeholder="Número de acompañantes" min="0" max="5">
 								</div>
+							</div>
+							<div class="row" id="assistants-container" style="margin-top: 10px;">
+
 							</div>
 							<div class="col-md-3 col-sm-3" id="hotel-section">
 								<div class="form-group">
@@ -487,23 +490,43 @@
 		}
 	</script>
 	<script>
+
 		document.querySelector("form").addEventListener("submit", async function(e) {
 		  e.preventDefault();
+
+		 const button = document.querySelector("form").querySelector("button[type='submit']");
+
+		  button.disabled = true;
+		  button.innerText = "Enviando..."
+			const assistantsCount = parseInt(document.getElementById("assistants").value) || 0;
+
+			const persons = [];
+
+			for (let i = 1; i <= assistantsCount; i++) {
+				const input = document.getElementById(`person_${i}`);
+				if (input) {
+					persons.push(input.value);
+				}
+}
 
 		  const data = {
 		    name: document.getElementById("name").value,	
 		    telephone: document.getElementById("telephone").value,
-		    assistants: document.getElementById("assistants").value,
+		    assistants: parseInt(document.getElementById("assistants").value) || 0,
 		    willAssist: document.querySelector('input[name="willAssist"]:checked')?.value,
 		    hotel: (document.getElementById("hotel").checked && document.querySelector('input[name="willAssist"]:checked')?.value === "Si")
 			? "Si"
-			: "No"
-		  };
+			: "No",
+			persons: persons
+		  };		  
 
-		  const res = await fetch("https://script.google.com/macros/s/AKfycbxxLDckClW4W85ds8ZjqvDrIhI7XOtqaDZB-C29lfi28rp0cEBkwMkwbGDezepXofH3/exec", {
+		  const res = await fetch("https://script.google.com/macros/s/AKfycbxYL-A3E00jQKY0mH-brihBjj2xsqpaSQcCIUUk68IhqJYtXJk1jTtRDkNNjWA7q_q8/exec", {
 		    method: "POST",
 		    body: JSON.stringify(data)
 		  });
+		
+		  button.disabled = false;
+          button.innerText = "Enviar respuesta";
 
 		  alert("¡Gracias! Tu asistencia ha sido registrada 💌");
 		});
@@ -529,6 +552,47 @@
 
 		// estado inicial
 		updateVisibility();
+		});
+	</script>
+	<script>
+		document.getElementById("assistants").addEventListener("input", function () {
+			const container = document.getElementById("assistants-container");
+			value = parseInt(this.value);
+			value = Math.min(5, Math.max(0, value));
+
+			container.innerHTML = ""; // limpiar anteriores
+
+			if (isNaN(value) || value == 0) return;
+
+			for (let i = 1; i <= value; i++) {
+				const div = document.createElement("div");
+				div.className = "col-md-4 col-sm-4 form-group";
+
+				const input = document.createElement("input");
+				input.type = "text";
+				input.className = "form-control";
+
+				// ID único
+				input.id = `person_${i}`;
+				input.name = `person_${i}`;
+				input.placeholder = `Nombre persona ${i}`;
+				input.required = true;
+
+				div.appendChild(input);
+				container.appendChild(div);
+			}
+		});
+	</script>
+	<script>
+		const input = document.getElementById("assistants");
+
+		input.addEventListener("input", function () {
+			let value = parseInt(this.value);
+
+			if (isNaN(value)) return;
+
+			if (value > 5) this.value = 5;
+			if (value < 0) this.value = 0;
 		});
 	</script>
 	</body>
