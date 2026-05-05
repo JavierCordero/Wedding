@@ -6,7 +6,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Wedding &mdash; 100% Free Fully Responsive HTML5 Template by FREEHTML5.co</title>
+	<title>Boda Ruidemiyu</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
 	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
@@ -120,9 +120,9 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-					<h2>Hola!</h2>
-					<h3>3 de Octubre 2026 en Fuente de Cantos, Extremadura</h3>
-					<p>¡Te invitamos a celebrar nuestra boda!</p>
+					<h2>¡Hola!</h2>
+					<h3>¡Te invitamos a nuestra boda!</h3>
+					<p>3 de Octubre 2026 en Fuente de Cantos, Extremadura</p>
 				</div>
 			</div>
 			<div class="couple-wrap animate-box">
@@ -133,7 +133,7 @@
 					<div class="desc-groom">
 						<h3>Javier Cordero</h3>	
 						<p>Más extremeño que una bellota. En 2016 decide que quiere hacer jueguitos y se va a la capital en busca de nuevas aventuras (y a estudiar mucho, por supuesto). 
-							Al poco de llegar (menos de 1 mes) conoce a Lucía y por eso estamos aquí.</p>
+							Al poco de llegar (menos de 1 mes) conoce a Lucía, y por eso estamos aquí...</p>
 					</div>
 				</div>
 				<p class="heart text-center"><i class="icon-heart2"></i></p>
@@ -143,7 +143,10 @@
 					</div>
 					<div class="desc-bride">
 						<h3>Lucía Blas</h3>
-						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove</p>
+						<p>De El Escorial de toda la vida. Tenemos la pequeña sospecha de que le gusta la gimnasia rítmica, pero no está confirmado.
+							Es la persona más buena, amable, graciosa, simpática y guapa que Javi haya podido conocer (y que le obliga a salir de casa
+							para no estar todo el día encerrado y que le de el aire).
+						</p>
 					</div>
 				</div>
 			</div>
@@ -291,7 +294,10 @@
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
 					<span>¿Dónde me puedo quedar?</span>
-					<p>Principalmente para la gente que viene de lejos, hemos buscado varios lugares en la zona donde podéis quedaros a dormir.	</p>
+					<p>Principalmente para la gente que viene de lejos, hemos buscado varios lugares en la zona donde podéis quedaros a dormir.	
+						<br><br>Si deseas alojarte en el Balneario El Raposo, en lugar de reservar por la web, escríbenos a nuestros números de teléfono o marca
+						"¿Tienes pensado alojarte en el balneario El Raposo?" en la sección de confirmar asistencia, ya que hacen descuento y reservan habitaciones para la boda.
+					</p>
 				</div>
 			</div>
 			<div class="row row-bottom-padded-md">
@@ -350,46 +356,46 @@
 			</div>
 			<div class="row animate-box">
 				<div class="col-md-10 col-md-offset-1">
-					<form class="form-inline">
+					<form class="form-inline" id="rsvpForm">
+						<div class="row" style="margin-top: 10px;">
+							<p>¿Asistirás?  
+								<input type="radio" name="willAssist" value="Si" required> Sí  
+								<input type="radio" name="willAssist" value="No" required> No
+							</p>
+							
+						</div>
 						<div class="row">
 							<div class="col-md-4 col-sm-4">
 								<div class="form-group">
 									<label for="name" class="sr-only">Nombre</label>
-									<input type="text" class="form-control" id="name" placeholder="Nombre">
+									<input type="text" class="form-control" id="name" placeholder="Nombre y apellido" required>
 								</div>
 							</div>
 							<div class="col-md-4 col-sm-4">
 								<div class="form-group">
-									<label for="email" class="sr-only">Teléfono</label>
-									<input type="email" class="form-control" id="email" placeholder="Teléfono">
+									<label for="telephone" class="sr-only">Teléfono</label>
+									<input type="text" class="form-control" id="telephone" placeholder="Teléfono" required>
 								</div>
 							</div>
 						</div>
 						<div class="row" style="margin-top: 10px;">
 							<div class="col-md-4 col-sm-4">
 								<div class="form-group">
-									<label for="people" class="sr-only">Número de asistentes</label>
-									<input type="number" class="form-control" id="people" placeholder="Número de asistentes">
+									<label for="assistants" class="sr-only">Número de personas</label>
+									<input type="text" class="form-control" id="assistants" placeholder="Número de personas">
 								</div>
 							</div>
-							<div class="col-md-3 col-sm-3">
+							<div class="col-md-3 col-sm-3" id="hotel-section">
 								<div class="form-group">
 								<div class="checkbox">
 									<label>
-									<input type="checkbox" id="alojamiento">
-									Necesito/Necesitamos alojamiento
+									<input type="checkbox" id="hotel">
+									¿Tienes pensado alojarte en balneario El Raposo?
 									</label>
 								</div>
 								</div>
 								
 							</div>
-						</div>
-						<div class="row" style="margin-top: 10px;">
-							<p>¿Confirmas asistencia?  
-								<input type="radio" name="asistencia" value="si"> Sí  
-								<input type="radio" name="asistencia" value="no"> No
-							</p>
-							
 						</div>
 						<div class="row" style="margin-top: 10px;">	
 							<div class="col-md-4 col-sm-4">
@@ -480,7 +486,50 @@
 			alert("Número de teléfono copiado: " + texto);
 		}
 	</script>
+	<script>
+		document.querySelector("form").addEventListener("submit", async function(e) {
+		  e.preventDefault();
 
+		  const data = {
+		    name: document.getElementById("name").value,	
+		    telephone: document.getElementById("telephone").value,
+		    assistants: document.getElementById("assistants").value,
+		    willAssist: document.querySelector('input[name="willAssist"]:checked')?.value,
+		    hotel: (document.getElementById("hotel").checked && document.querySelector('input[name="willAssist"]:checked')?.value === "Si")
+			? "Si"
+			: "No"
+		  };
+
+		  const res = await fetch("https://script.google.com/macros/s/AKfycbxxLDckClW4W85ds8ZjqvDrIhI7XOtqaDZB-C29lfi28rp0cEBkwMkwbGDezepXofH3/exec", {
+		    method: "POST",
+		    body: JSON.stringify(data)
+		  });
+
+		  alert("¡Gracias! Tu asistencia ha sido registrada 💌");
+		});
+	</script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+		const radios = document.querySelectorAll('input[name="willAssist"]');
+		const hotelSection = document.getElementById("hotel-section");
+
+		function updateVisibility() {
+			const selected = document.querySelector('input[name="willAssist"]:checked')?.value;
+
+			if (selected === "No") {
+			hotelSection.style.display = "none";
+			} else {
+			hotelSection.style.display = "block";
+			}
+		}
+
+		radios.forEach(radio => {
+			radio.addEventListener("change", updateVisibility);
+		});
+
+		// estado inicial
+		updateVisibility();
+		});
+	</script>
 	</body>
 </html>
-
