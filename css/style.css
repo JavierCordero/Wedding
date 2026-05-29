@@ -1852,4 +1852,15 @@ form label {
   opacity: 0;
 }
 
+.map-container {
+    width: 100%;
+    overflow: hidden; /* evita que se salga */
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 220px;
+    border: 0;
+    display: block;
+}
 /*# sourceMappingURL=style.css.map */
