@@ -387,7 +387,7 @@
 					<br> También podéis confirmar a los números de teléfono:
 					</p>
 					
-					<div class="row" style="margin-top: 10px; margin-left: 20%">
+					<div class="row" style="margin-top: 10px; margin-left: 25%">
 						<div class="col-md-8 col-sm-8">
 							<p style="display:inline;">Lucía:</p>
 							<p id="telephoneLucia" style="text-decoration: underline; cursor: pointer; display: inline" onclick="copyPhone('telephoneLucia')"> 619659104</p>
@@ -586,14 +586,23 @@
 		document.addEventListener("DOMContentLoaded", function () {
 		const radios = document.querySelectorAll('input[name="willAssist"]');
 		const hotelSection = document.getElementById("hotel-section");
+		const hotelRadios = document.querySelectorAll('input[name="hotel"]');
 
 		function updateVisibility() {
 			const selected = document.querySelector('input[name="willAssist"]:checked')?.value;
 
 			if (selected === "No") {
 			hotelSection.style.display = "none";
+			hotelRadios.forEach(radio => {
+                radio.required = false;
+                radio.checked = false;
+            });
+
 			} else {
 			hotelSection.style.display = "block";
+			hotelRadios.forEach(radio => {
+                radio.required = true;
+            });
 			}
 		}
 
