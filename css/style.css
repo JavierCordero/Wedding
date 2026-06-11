@@ -5,6 +5,13 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+    font-family: "JimmyScript";
+    src: url("../fonts/JimmyScript/JimmyScript-Rg.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
 /* =======================================================
 *
 * 	Template Style 
@@ -114,7 +121,7 @@ h1, h2, h3, h4, h5, h6, figure {
   margin: 0;
   padding: 0;
   line-height: 40px;
-  font-family: "Sacramento", Arial, serif;
+  font-family: "JimmyScript", Arial, serif;
 }
 .fh5co-nav a {
   padding: 5px 10px;
@@ -413,7 +420,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 #fh5co-counter .event-wrap,
 #fh5co-event .event-wrap {
-  border: 2px solid rgba(255, 255, 255, 0.5);
+  border: 2px solid #ccc;
   background: rgba(255, 255, 255, 0.1);
   padding: 30px;
   width: 100%;
@@ -525,8 +532,8 @@ h1, h2, h3, h4, h5, h6, figure {
   right: -14px;
   display: inline-block;
   border-top: 14px solid transparent;
-  border-left: 14px solid #fff;
-  border-right: 0 solid #fff;
+  border-left: 14px solid #fffdf9;
+  border-right: 0 solid #fffdf9;
   border-bottom: 14px solid transparent;
   content: " ";
 }
@@ -855,7 +862,7 @@ form label {
   margin-bottom: 0px;
   font-size: 100px;
   line-height: 1.5;
-  font-family: "Sacramento", Arial, serif;
+  font-family: "JimmyScript", Arial, serif;
 }
 @media screen and (max-width: 768px) {
   #fh5co-header .display-tc h1,
@@ -1027,6 +1034,26 @@ form label {
   }
 }
 
+#fh5co-gallery
+{
+  background: #fffbf0 !important;
+}
+
+#fh5co-event
+{
+  background: #fffbf0 !important;
+}
+
+#fh5co-couple
+{
+  background: #fffdf9 !important;
+}
+
+#fh5co-couple-story
+{
+  background: #fffdf9 !important;
+}
+
 .fh5co-section-gray {
   background: rgba(0, 0, 0, 0.04);
 }
@@ -1056,7 +1083,7 @@ form label {
 }
 .heart i {
   font-size: 20px;
-  background: #fff;
+  background: rgb(255, 253, 249);
   padding: 20px;
   color: #F14E95;
   -webkit-border-radius: 50%;
@@ -1080,7 +1107,7 @@ form label {
   }
 }
 .couple-half h3 {
-  font-family: "Sacramento", Arial, serif;
+  font-family: "JimmyScript", Arial, serif;
   color: #F14E95;
   font-size: 30px;
 }
@@ -1197,7 +1224,7 @@ form label {
   line-height: 1.5;
   font-weight: bold;
   color: #F14E95;
-  font-family: "Sacramento", Arial, serif;
+  font-family: "JimmyScript", Arial, serif;
 }
 @media screen and (max-width: 768px) {
   .fh5co-heading h2 {
@@ -1240,7 +1267,7 @@ form label {
   display: -moz-inline-stack;
   display: inline-block;
   zoom: 1;
-  *display: inline;
+  display: inline;
   width: 100px;
   height: 100px;
 }
@@ -1352,7 +1379,7 @@ form label {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: #fffdf9;
 }
 #fh5co-started .fh5co-heading h2 {
   color: #fff;
@@ -1866,5 +1893,60 @@ form label {
     height: 220px;
     border: 0;
     display: block;
+}
+
+#fh5co-header {
+    background-size: contain !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-color: #fffbf0;
+}
+
+#fh5co-event .event-wrap,
+#fh5co-event .event-wrap h3,
+#fh5co-event .event-wrap p,
+#fh5co-event .event-wrap span,
+#fh5co-event .event-wrap i {
+    color: rgb(130, 130, 130) !important;
+}
+
+#fh5co-event h2
+{
+color: #F14E95 !important;
+}
+
+#fh5co-started h2 
+{
+    color: #F14E95 !important;
+}
+
+#fh5co-started,
+#fh5co-started h1,
+#fh5co-started h3,
+#fh5co-started p,
+#fh5co-started span,
+#fh5co-started label {
+    color: rgb(130, 130, 130) !important;
+}
+
+#fh5co-started .form-control {
+    color: rgb(130, 130, 130) !important;
+    background-color: #fffdf9 !important;
+    border: 1px solid rgb(130, 130, 130) !important;
+}
+
+/* Placeholder */
+#fh5co-started .form-control::placeholder {
+    color: rgb(130, 130, 130) !important;
+}
+
+/* Firefox fix */
+#fh5co-started .form-control::-moz-placeholder {
+    color: rgb(130, 130, 130) !important;
+}
+
+/* Chrome/Safari/Edge */
+#fh5co-started .form-control::-webkit-input-placeholder {
+    color: rgb(130, 130, 130) !important;
 }
 /*# sourceMappingURL=style.css.map */
