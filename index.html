@@ -598,8 +598,16 @@
 		
 		  button.disabled = false;
           button.innerText = "Enviar respuesta";
-
-		  alert("¡Gracias! Tu asistencia ha sido registrada 💌");
+		
+		  if(res.ok)
+		  {
+			alert("¡Gracias! Tu asistencia ha sido registrada 💌");
+			document.querySelector("form").reset();
+			document.getElementById("assistants-container").innerHTML = "";
+		  }
+		  else{
+			alert("Ha ocurrido un error al enviar el formulario.")
+		  }
 		});
 	</script>
 	<script>
